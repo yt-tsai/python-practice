@@ -1,6 +1,12 @@
-names = ["Peter", "Marina", "Mika", "PaiPai"]
-
+# List example
 line = "-------------------------"
+names = [
+    "Peter", 
+    "Marina", 
+    "Mika", 
+    "PaiPai"
+]
+
 print(line)
 print("List:")
 print(names)
@@ -25,4 +31,4 @@ print(f"The length of current List:  {len(names)}")
 print(line)
 
 for name in names:
-  print(name)
+    print(name)
