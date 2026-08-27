@@ -21,6 +21,14 @@ This repository documents my Python learning journey, programming exercises, and
   - Dictionary
   - Tuple
   - Set
+- Functions
+  - Parameters and Arguments
+  - Default Arguments
+  - Positional and Keyword Arguments
+  - Return Values
+  - Variable Scope
+  - *args
+  - **kwargs
 
 ## Project Structure
 
@@ -29,11 +37,17 @@ python-practice/
 ├── p01_python_basics/
 │   ├── variables.py
 │   └── control_flow.py
-└── p02_collections/
-    ├── list_example.py
-    ├── dictionary_example.py
-    ├── tuple_example.py
-    └── set_example.py
+├── p02_collections/
+│   ├── list_example.py
+│   ├── dictionary_example.py
+│   ├── tuple_example.py
+│   └── set_example.py
+└── p03_functions/
+    ├── function_example.py
+    ├── scope_example.py
+    ├── args_example.py
+    ├── kwargs_example.py
+    └── function_review.py
 ```
 
 ## Notes
