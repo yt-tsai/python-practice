@@ -12,16 +12,17 @@ This repository documents my Python learning journey, programming exercises, and
 
 ### Python Fundamentals
 
-- Variables and Data Types
-- f-strings
-- Control Flow
-  - if / elif / else
-- Collections
+- **p01 — Python Basics**
+  - Variables and Data Types
+  - f-strings
+  - Control Flow
+    - if / elif / else
+- **p02 — Collections**
   - List
   - Dictionary
   - Tuple
   - Set
-- Functions
+- **p03 — Functions**
   - Parameters and Arguments
   - Default Arguments
   - Positional and Keyword Arguments
@@ -29,6 +30,13 @@ This repository documents my Python learning journey, programming exercises, and
   - Variable Scope
   - *args
   - **kwargs
+- **p04 — Modules and Packages**
+  - Import Modules
+  - Import Specific Functions
+  - Module Aliases
+  - Standard Library
+  - `__name__` and `__main__`
+  - Packages and `__init__.py`
 
 ## Project Structure
 
@@ -42,12 +50,19 @@ python-practice/
 │   ├── dictionary_example.py
 │   ├── tuple_example.py
 │   └── set_example.py
-└── p03_functions/
-    ├── function_example.py
-    ├── scope_example.py
-    ├── args_example.py
-    ├── kwargs_example.py
-    └── function_review.py
+├── p03_functions/
+│   ├── function_example.py
+│   ├── scope_example.py
+│   ├── args_example.py
+│   ├── kwargs_example.py
+│   └── function_review.py
+└── p04_modules/
+    ├── calculator.py
+    ├── main.py
+    ├── random_example.py
+    └── utilities/
+        ├── __init__.py
+        └── math_tools.py
 ```
 
 ## Notes
