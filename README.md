@@ -37,6 +37,17 @@ This repository documents my Python learning journey, programming exercises, and
   - Standard Library
   - `__name__` and `__main__`
   - Packages and `__init__.py`
+- **p05 — Object-Oriented Programming**
+  - Classes and Instances
+  - Constructors (`__init__`)
+  - Instance and Class Attributes
+  - Inheritance and `super()`
+  - Method Overriding
+  - Polymorphism
+  - Duck Typing
+  - Encapsulation
+  - Properties (Getter and Setter)
+  - Validation and Exceptions
 
 ## Project Structure
 
@@ -56,13 +67,20 @@ python-practice/
 │   ├── args_example.py
 │   ├── kwargs_example.py
 │   └── function_review.py
-└── p04_modules/
-    ├── calculator.py
-    ├── main.py
-    ├── random_example.py
-    └── utilities/
-        ├── __init__.py
-        └── math_tools.py
+├── p04_modules/
+│   ├── calculator.py
+│   ├── main.py
+│   ├── random_example.py
+│   └── utilities/
+│       ├── __init__.py
+│       └── math_tools.py
+└── p05_oop/
+    ├── class_example.py
+    ├── inheritance_example.py
+    ├── class_attribute_example.py
+    ├── encapsulation_example.py
+    ├── property_example.py
+    └── oop_review.py
 ```
 
 ## Notes
