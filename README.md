@@ -46,8 +46,15 @@ This repository documents my Python learning journey, programming exercises, and
   - Polymorphism
   - Duck Typing
   - Encapsulation
-  - Properties (Getter and Setter)
+  - Properties (Getters and Setters)
   - Validation and Exceptions
+- **p06 — Exception Handling**
+  - try / except
+  - Multiple Exception Types
+  - else / finally
+  - raise
+  - ValueError
+  - ZeroDivisionError
 
 ## Project Structure
 
@@ -74,13 +81,15 @@ python-practice/
 │   └── utilities/
 │       ├── __init__.py
 │       └── math_tools.py
-└── p05_oop/
-    ├── class_example.py
-    ├── inheritance_example.py
-    ├── class_attribute_example.py
-    ├── encapsulation_example.py
-    ├── property_example.py
-    └── oop_review.py
+├── p05_oop/
+│   ├── class_example.py
+│   ├── inheritance_example.py
+│   ├── class_attribute_example.py
+│   ├── encapsulation_example.py
+│   ├── property_example.py
+│   └── oop_review.py
+├── p06_exceptions/
+│   └── exception_example.py
 ```
 
 ## Notes
