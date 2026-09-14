@@ -11,3 +11,6 @@ venv/
 
 # VS Code
 .vscode/
+
+p07_file_handling/sample.txt
+p07_file_handling/languages.txt
