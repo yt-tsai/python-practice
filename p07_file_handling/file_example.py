@@ -67,3 +67,82 @@ except FileNotFoundError as e:
 
 finally:
     print("File operation finished.")
+
+# Pathlib practice
+from pathlib import Path
+
+
+# file_path = Path("p07_file_handling/sample.txt") ; relative path
+folder = Path("p07_file_handling")
+file_path = folder / "sample.txt"
+
+print(folder)
+print(file_path)
+print(file_path.exists())
+
+print()
+
+print(file_path)
+print(type(file_path))
+print(file_path.name)
+print(file_path.parent)
+print(file_path.exists())
+
+# p07_file_handling/sample.txt   ← file_path
+# <class 'pathlib.PosixPath'>    ← object type
+# sample.txt                     ← file_path.name
+# p07_file_handling              ← file_path.parent
+# True                           ← file_path.exists()
+
+# Using __file__ practice
+print()
+print(__file__)
+print()
+
+current_file = Path(__file__)
+
+print(current_file)
+print(current_file.name)
+print(current_file.parent)
+
+print()
+
+# Absolute path
+current_folder = Path(__file__).parent
+sample_path = current_folder / "sample.txt"
+
+print(sample_path)
+print(sample_path.exists())
+print()
+
+with open(sample_path, "r") as file:
+    content = file.read()
+
+print(content)
+
+# .is_file() ; .is_dir()
+print(sample_path.exists())
+print(sample_path.is_file())
+print(sample_path.is_dir())
+print()
+print(current_folder.exists())
+print(current_folder.is_file())
+print(current_folder.is_dir())
+print()
+
+# Create a directory
+output_folder = current_folder / "output"
+
+# Use mkdir(exist_ok=True) to avoid an error if the directory already exists.
+output_folder.mkdir(exist_ok=True) 
+
+print(output_folder)
+print(output_folder.exists())
+print(output_folder.is_dir())
+
+# Create nested directories
+backup_folder = current_folder / "data" / "backup" / "2026"
+
+# backup_folder.mkdir()  ;  It cannot be created because parent directory is not exist.
+
+backup_folder.mkdir(parents=True, exist_ok=True)
