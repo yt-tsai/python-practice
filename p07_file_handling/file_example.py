@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 with open("p07_file_handling/sample.txt", "w") as file:
     file.write("Hello, Python!\n")
 
@@ -69,8 +72,6 @@ finally:
     print("File operation finished.")
 
 # Pathlib practice
-from pathlib import Path
-
 
 # file_path = Path("p07_file_handling/sample.txt") ; relative path
 folder = Path("p07_file_handling")
@@ -134,7 +135,7 @@ print()
 output_folder = current_folder / "output"
 
 # Use mkdir(exist_ok=True) to avoid an error if the directory already exists.
-output_folder.mkdir(exist_ok=True) 
+output_folder.mkdir(exist_ok=True)
 
 print(output_folder)
 print(output_folder.exists())
@@ -143,6 +144,44 @@ print(output_folder.is_dir())
 # Create nested directories
 backup_folder = current_folder / "data" / "backup" / "2026"
 
-# backup_folder.mkdir()  ;  It cannot be created because parent directory is not exist.
+# backup_folder.mkdir()  # mkdir() fails if the parent directories do not exist.
 
 backup_folder.mkdir(parents=True, exist_ok=True)
+
+# Read text using pathlib
+content = sample_path.read_text(encoding="utf-8")
+
+print()
+print("# Read text using pathlib")
+print(content)
+
+# Write text using pathlib
+output_path = current_folder / "output.txt"
+
+output_path.write_text(
+    "Python File Handling\n中文測試\n日本語テスト\n",
+    encoding="utf-8"
+)
+
+print()
+print("# Write text using pathlib")
+print(output_path.read_text(encoding="utf-8"))
+
+# Characters written
+characters_written = output_path.write_text(
+    "Python File Handling\n中文測試\n日本語テスト\n",
+    encoding="utf-8"
+)
+
+print(characters_written)
+
+# Summary
+# Read small text files / entire files
+# → Path.read_text()
+# Overwrite small text files / entire files
+# → Path.write_text()
+
+# Process files line by line / large files / need more control
+# → open() + with
+# Append content:
+# → open(..., "a")

@@ -55,6 +55,19 @@ This repository documents my Python learning journey, programming exercises, and
   - raise
   - ValueError
   - ZeroDivisionError
+- **p07 — File Handling**
+  - Reading and Writing Files
+  - File Modes (`r`, `w`, `a`)
+  - `read()`, `readline()`, and `readlines()`
+  - Line-by-Line File Processing
+  - File Exception Handling
+  - `pathlib` and `Path`
+  - Relative and Absolute Paths
+  - `__file__` and Path Resolution
+  - File and Directory Checks
+  - Creating Directories with `mkdir()`
+  - `read_text()` and `write_text()`
+  - UTF-8 Encoding
 
 ## Project Structure
 
@@ -90,6 +103,8 @@ python-practice/
 │   └── oop_review.py
 ├── p06_exceptions/
 │   └── exception_example.py
+├── p07_file_handling/
+│   └── file_example.py
 ```
 
 ## Notes
