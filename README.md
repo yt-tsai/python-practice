@@ -68,6 +68,12 @@ This repository documents my Python learning journey, programming exercises, and
   - Creating Directories with `mkdir()`
   - `read_text()` and `write_text()`
   - UTF-8 Encoding
+- **p08 — List Comprehension**
+  - Basic List Comprehension
+  - Transforming Elements
+  - Filtering with Conditions
+  - Transforming and Filtering
+  - Conditional Expressions (`if...else`)
 
 ## Project Structure
 
@@ -105,6 +111,8 @@ python-practice/
 │   └── exception_example.py
 ├── p07_file_handling/
 │   └── file_example.py
+├── p08_comprehensions/
+│   └── list_comprehension.py
 ```
 
 ## Notes
