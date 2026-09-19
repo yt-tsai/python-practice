@@ -72,7 +72,7 @@ numbers = [1, 2, 3, 4, 5]
 # doubled_numbers = map(
 #         lambda number: number * 2,
 #         numbers
-#     )
+# )
 
 # A map object is an iterator, so the second iteration will be empty.
 # print(list(doubled_numbers))
@@ -90,3 +90,50 @@ doubled_numbers = list(
 print(doubled_numbers)
 print()
 print(doubled_numbers)
+print()
+
+# Lambda with filter()
+numbers = [1, 2, 3, 4, 5, 6]
+
+even_numbers = list(
+    filter(
+        lambda number: number % 2 == 0,
+        numbers
+    )
+)
+
+print(even_numbers)
+print()
+
+# Filter words by length
+languages = ["Python", "Java", "SQL", "JavaScript", "C"]
+
+long_languages = list(
+    filter(
+        lambda language: len(language) > 4,
+        languages
+    )
+)
+
+print(long_languages)
+print()
+
+# Combine filter() and map()
+numbers = [1, 2, 3, 4, 5, 6]
+
+even_numbers = list(
+    filter(
+        lambda number: number % 2 == 0,
+        numbers
+    )
+)
+
+squared_even_numbers = list(
+    map(
+        lambda number: number ** 2,
+        even_numbers
+    )
+)
+
+print(squared_even_numbers)
+print()
