@@ -74,6 +74,16 @@ This repository documents my Python learning journey, programming exercises, and
   - Filtering with Conditions
   - Transforming and Filtering
   - Conditional Expressions (`if...else`)
+- **p09 — Lambda Functions**
+  - Lambda Expressions
+  - Multiple Parameters
+  - `sorted()` with `key`
+  - Sorting with `reverse=True`
+  - `map()` and Iterators
+  - `filter()`
+  - Combining `map()` and `filter()`
+  - `max()` and `min()` with `key`
+  - Lambda vs Named Functions
 
 ## Project Structure
 
@@ -113,6 +123,8 @@ python-practice/
 │   └── file_example.py
 ├── p08_comprehensions/
 │   └── list_comprehension.py
+├── p09_lambda/
+│   └── lambda_example.py
 ```
 
 ## Notes

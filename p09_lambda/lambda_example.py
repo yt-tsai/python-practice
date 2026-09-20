@@ -70,8 +70,8 @@ print()
 numbers = [1, 2, 3, 4, 5]
 
 # doubled_numbers = map(
-#         lambda number: number * 2,
-#         numbers
+#     lambda number: number * 2,
+#     numbers
 # )
 
 # A map object is an iterator, so the second iteration will be empty.
@@ -137,3 +137,51 @@ squared_even_numbers = list(
 
 print(squared_even_numbers)
 print()
+
+# Combine filter() and map() in one expression
+numbers = [1, 2, 3, 4, 5, 6]
+
+squared_even_numbers = list(
+    map(
+        lambda number: number ** 2,
+        filter(
+            lambda number: number % 2 == 0,
+            numbers
+        )
+    )
+)
+
+print(squared_even_numbers)
+print()
+
+# Find the student with the highest score
+students = [
+    ("Peter", 85),
+    ("Marina", 92),
+    ("Mika", 78),
+]
+
+highest_score_student = max(
+    students,
+    key=lambda student: student[1]
+)
+
+print(highest_score_student)
+print()
+
+# Find the student with the lowest score
+lowest_score_student = min(
+    students,
+    key=lambda student: student[1]
+)
+
+print(lowest_score_student)
+print()
+
+# Find the student with the longest name
+longest_name_student = max(
+    students,
+    key=lambda student: len(student[0])
+)
+
+print(longest_name_student)
