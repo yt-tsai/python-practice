@@ -45,3 +45,34 @@ print(next(iterator1))
 print(next(iterator1))
 print()
 print(next(iterator2))
+print("-----------------------")
+print()
+
+# Generator function
+def generate_numbers():
+    print("Before yield 1")
+    yield 1
+
+    print("Before yield 2")
+    yield 2
+
+    print("Before yield 3")
+    yield 3
+
+    print("Generator finished")
+
+
+generated_numbers = generate_numbers()
+
+print("Generator created")
+print()
+
+print(next(generated_numbers))
+print()
+print(next(generated_numbers))
+print()
+# Even after the third next() call, "Generator finished" is not printed, 
+# because the generator pauses at yield 3.
+print(next(generated_numbers))
+print()
+
