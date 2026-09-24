@@ -149,3 +149,21 @@ print(number_list[1])
 print()
 # A generator does not support indexing.
 # print(number_generator[1])
+
+
+# Generator Expression practice
+print("-----------------------")
+print("Generator Expression practice:")
+print()
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+squared_even_generator = (
+    number ** 2 for number in numbers if number % 2 == 0
+)
+
+print(squared_even_generator)
+print()
+
+for number in squared_even_generator:
+    print(number)

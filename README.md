@@ -84,6 +84,17 @@ This repository documents my Python learning journey, programming exercises, and
   - Combining `map()` and `filter()`
   - `max()` and `min()` with `key`
   - Lambda vs Named Functions
+- **p10 — Iterators and Generators**
+  - Iterable vs Iterator
+  - `iter()` and `next()`
+  - `StopIteration`
+  - Iterator Exhaustion
+  - Generator Functions
+  - `yield`
+  - Lazy Evaluation
+  - Generator Expressions
+  - Memory Efficiency
+  - List vs Generator
 
 ## Project Structure
 
@@ -125,6 +136,8 @@ python-practice/
 │   └── list_comprehension.py
 ├── p09_lambda/
 │   └── lambda_example.py
+├── p10_iterators/
+│   └── iterator_example.py
 ```
 
 ## Notes
