@@ -60,3 +60,27 @@ scores = [88.0, 77.0, 55.0]
 scores_average = get_average(scores)
 print(scores_average)
 print()
+
+
+# Union type hint
+def find_language(language_id: int) -> str | None:
+    if language_id == 1:
+        return "Python"
+    if language_id == 2:
+        return "Java"
+    return None
+
+print("-- Union type hint --")
+print(find_language(1))
+print(find_language(2))
+print(find_language(99))
+
+
+# Union type with multiple possible types
+def format_id(user_id: int | str) -> str:
+    return "ID: " + str(user_id)
+
+
+print("-- Union type --")
+print(format_id(100))
+print(format_id("A001"))
