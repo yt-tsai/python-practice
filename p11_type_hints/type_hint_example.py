@@ -84,3 +84,21 @@ def format_id(user_id: int | str) -> str:
 print("-- Union type --")
 print(format_id(100))
 print(format_id("A001"))
+print()
+
+
+# Class type hint
+print("-- Class type hint --")
+
+
+class User:
+    def __init__(self, name: str):
+        self.name = name
+
+
+def show_user(user: User) -> None:
+    print(f"User: {user.name}")
+
+
+user = User("Peter")
+show_user(user)
