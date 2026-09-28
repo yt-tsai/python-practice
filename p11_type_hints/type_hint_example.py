@@ -102,3 +102,27 @@ def show_user(user: User) -> None:
 
 user = User("Peter")
 show_user(user)
+print()
+
+
+# Callable type hint
+print("-- Callable type hint --")
+from collections.abc import Callable
+
+
+def double(number: int) -> int:
+    return number * 2
+
+
+print(double(40))
+print()
+
+
+def apply_operation(
+    number: int,
+    operation: Callable[[int], int]
+) -> int:
+    return operation(number)
+
+
+print(apply_operation(40, double))
