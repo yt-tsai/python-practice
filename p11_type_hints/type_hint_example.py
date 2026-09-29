@@ -141,3 +141,27 @@ def show_priority(priority: Literal["H", "M", "L"]) -> None:
 show_priority("H")
 show_priority("M")
 show_priority("L")
+print()
+
+
+# TypedDict type hint
+print("-- TypedDict type hint --")
+from typing import TypedDict
+
+
+class IssueInfo(TypedDict):
+    title: str
+    priority: Literal["H", "M", "L"]
+    progress: int
+
+
+issue: IssueInfo = {
+    "title": "Login error",
+    "priority": "H",
+    "progress": 50
+}
+
+print(issue)
+print(issue["title"])
+print(issue["priority"])
+print(issue["progress"])
