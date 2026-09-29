@@ -126,3 +126,18 @@ def apply_operation(
 
 
 print(apply_operation(40, double))
+print()
+
+
+# Literal type hint
+print("-- Literal type hint --")
+from typing import Literal
+
+
+def show_priority(priority: Literal["H", "M", "L"]) -> None:
+    print(f"Priority: {priority}")
+
+
+show_priority("H")
+show_priority("M")
+show_priority("L")
