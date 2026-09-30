@@ -181,3 +181,23 @@ def display_issue_priority(priority: IssuePriority) -> None:
 display_issue_priority("H")
 display_issue_priority("M")
 display_issue_priority("L")
+print()
+
+
+# Optional type hint
+print("-- Optional type hint --")
+from typing import Optional
+
+
+def find_framework(framework_id: int) -> Optional[str]:
+    if framework_id == 1:
+        return "Spring Boot"
+    if framework_id == 2:
+        return "Django"
+    return None
+
+
+print(find_framework(1))
+print(find_framework(2))
+print(find_framework(99))
+print()
