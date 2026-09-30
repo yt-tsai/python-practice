@@ -165,3 +165,19 @@ print(issue)
 print(issue["title"])
 print(issue["priority"])
 print(issue["progress"])
+print()
+
+
+# Type alias
+print("-- Type alias --")
+
+IssuePriority = Literal["H", "M", "L"]
+
+
+def display_issue_priority(priority: IssuePriority) -> None:
+    print(f"Issue priority: {priority}")
+
+
+display_issue_priority("H")
+display_issue_priority("M")
+display_issue_priority("L")
