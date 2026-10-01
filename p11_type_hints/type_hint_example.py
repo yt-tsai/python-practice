@@ -217,3 +217,21 @@ show_value(100)
 show_value("Python")
 show_value(3.14)
 show_value([1, 2, 3])
+print()
+
+
+# TypeVar type hint
+print("-- TypeVar type hint --")
+
+from typing import TypeVar
+
+
+T = TypeVar("T")
+
+
+def get_first(items: list[T]) -> T:
+    return items[0]
+
+
+print(get_first([10, 20, 30]))
+print(get_first(["Python", "Java", "SQL"]))
