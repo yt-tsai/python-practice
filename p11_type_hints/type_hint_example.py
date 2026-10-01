@@ -201,3 +201,19 @@ print(find_framework(1))
 print(find_framework(2))
 print(find_framework(99))
 print()
+
+
+# Any type hint
+print("-- Any type hint --")
+
+from typing import Any
+
+
+def show_value(value: Any) -> None:
+    print(f"Value: {value}")
+
+
+show_value(100)
+show_value("Python")
+show_value(3.14)
+show_value([1, 2, 3])
