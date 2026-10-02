@@ -235,3 +235,25 @@ def get_first(items: list[T]) -> T:
 
 print(get_first([10, 20, 30]))
 print(get_first(["Python", "Java", "SQL"]))
+print()
+
+
+# Generic class
+print("-- Generic class --")
+
+from typing import Generic
+
+
+class Container(Generic[T]):
+    def __init__(self, value: T):
+        self.value = value
+
+    def get_value(self) -> T:
+        return self.value
+
+
+number_container = Container[int](100)
+text_container = Container[str]("Python")
+
+print(number_container.get_value())
+print(text_container.get_value())
