@@ -257,3 +257,30 @@ text_container = Container[str]("Python")
 
 print(number_container.get_value())
 print(text_container.get_value())
+
+
+# Protocol type hint
+print("-- Protocol type hint --")
+
+from typing import Protocol
+
+
+class Printable(Protocol):
+    def print_info(self) -> str:
+        ...
+
+
+class User:
+    def __init__(self, name: str):
+        self.name = name
+
+    def print_info(self) -> str:
+        return f"User: {self.name}"
+
+
+def show_info(user: Printable) -> None:
+    print(user.print_info())
+
+
+user = User("Peter")
+show_info(user)
