@@ -284,3 +284,16 @@ def show_info(user: Printable) -> None:
 
 user = User("Peter")
 show_info(user)
+print()
+
+
+# Final type hint
+print("-- Final type hint --")
+
+from typing import Final
+
+MAX_RETRIES: Final[int] = 3
+APP_NAME: Final[str] = "Technical Issue Manager"
+
+print(MAX_RETRIES)
+print(APP_NAME)
