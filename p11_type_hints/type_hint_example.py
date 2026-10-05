@@ -297,3 +297,25 @@ APP_NAME: Final[str] = "Technical Issue Manager"
 
 print(MAX_RETRIES)
 print(APP_NAME)
+print()
+
+
+# ClassVar type hint
+print("-- ClassVar type hint --")
+
+from typing import ClassVar
+
+
+class Employee:
+    company: ClassVar[str] = "Tech Corp"
+
+    def __init__(self, name: str):
+        self.name = name
+
+
+employee1 = Employee("Peter")
+employee2 = Employee("Marina")
+
+print(Employee.company)
+print(employee1.name)
+print(employee2.name)
