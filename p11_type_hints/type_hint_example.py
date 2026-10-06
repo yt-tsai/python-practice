@@ -319,3 +319,16 @@ employee2 = Employee("Marina")
 print(Employee.company)
 print(employee1.name)
 print(employee2.name)
+print()
+
+
+# cast type hint
+print("-- cast type hint --")
+
+from typing import Any, cast
+
+value: Any = "Python"
+
+text = cast(str, value)
+
+print(text.upper())
