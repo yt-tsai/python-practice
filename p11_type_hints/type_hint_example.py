@@ -332,3 +332,28 @@ value: Any = "Python"
 text = cast(str, value)
 
 print(text.upper())
+print()
+
+
+# overload type hint
+print("-- overload type hint --")
+
+from typing import overload
+
+
+@overload
+def format_value(value: int) -> str:
+    ...
+
+
+@overload
+def format_value(value: float) -> str:
+    ...
+
+
+def format_value(value: int | float) -> str:
+    return f"Value: {value}"
+
+
+print(format_value(100))
+print(format_value(3.14))
