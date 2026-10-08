@@ -357,3 +357,20 @@ def format_value(value: int | float) -> str:
 
 print(format_value(100))
 print(format_value(3.14))
+print()
+
+
+# TypeGuard type hint
+print("-- TypeGuard type hint --")
+
+from typing import TypeGuard
+
+
+def is_integer(value: object) -> TypeGuard[int]:
+    return isinstance(value, int)
+
+
+value: object = 100
+
+if is_integer(value):
+    print(value * 2)
