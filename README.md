@@ -95,6 +95,26 @@ This repository documents my Python learning journey, programming exercises, and
   - Generator Expressions
   - Memory Efficiency
   - List vs Generator
+- **p11 — Type Hints**
+  - Basic Type Hints
+  - Variable and Function Annotations
+  - Collection Type Hints
+  - Union Types (`|`)
+  - Class Type Hints
+  - `Callable`
+  - `Literal`
+  - `TypedDict`
+  - Type Aliases
+  - `Optional`
+  - `Any`
+  - `TypeVar`
+  - Generic Classes
+  - `Protocol`
+  - `Final`
+  - `ClassVar`
+  - `cast()`
+  - `@overload`
+  - `TypeGuard`
 
 ## Project Structure
 
@@ -138,6 +158,8 @@ python-practice/
 │   └── lambda_example.py
 ├── p10_iterators/
 │   └── iterator_example.py
+├── p11_type_hints/
+│   └── type_hint_example.py
 ```
 
 ## Notes
