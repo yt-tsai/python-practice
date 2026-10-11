@@ -23,3 +23,18 @@ formatted_datetime = now.strftime("%Y-%m-%d %H:%M")
 print(formatted_date)
 print(formatted_time)
 print(formatted_datetime)
+print()
+
+
+# Date parsing
+print("-- Date parsing --")
+
+date_text = "2026-10-11"
+
+parsed_date = datetime.strptime(date_text, "%Y-%m-%d")
+
+print(parsed_date)
+print(parsed_date.year)
+print(parsed_date.month)
+print(parsed_date.day)
+print(type(parsed_date))
