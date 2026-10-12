@@ -1,7 +1,7 @@
 # datetime basics
 print("-- datetime basics --")
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 now = datetime.now()
@@ -38,3 +38,20 @@ print(parsed_date.year)
 print(parsed_date.month)
 print(parsed_date.day)
 print(type(parsed_date))
+print()
+
+
+# Timedelta basics
+print("-- Timedelta basics --")
+
+today = datetime(2026, 10, 12)
+
+next_week = today + timedelta(days=7)
+last_week = today - timedelta(days=7)
+
+created_date = datetime(2026, 9, 24)
+issue_age = today - created_date
+
+print(f"Next week: {next_week}")
+print(f"Last week: {last_week}")
+print(f"Issue age: {issue_age.days} days")
