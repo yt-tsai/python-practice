@@ -55,3 +55,18 @@ issue_age = today - created_date
 print(f"Next week: {next_week}")
 print(f"Last week: {last_week}")
 print(f"Issue age: {issue_age.days} days")
+print()
+
+
+# Timedelta total seconds
+print("-- Timedelta total seconds --")
+
+start_time = datetime(2026, 10, 13, 15, 0)
+end_time = datetime(2026, 10, 15, 14, 30)
+
+duration = end_time - start_time
+
+total_hours = duration.total_seconds() / (60 * 60)
+
+print(f"Duration: {duration}")
+print(f"Total hours: {total_hours}")
