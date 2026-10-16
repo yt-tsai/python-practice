@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 
 # JSON dumps basics
@@ -29,3 +30,15 @@ print(f"Title: {parsed_issue['title']}")
 print(f"Priority: {parsed_issue['priority']}")
 print(f"Resolved: {parsed_issue['resolved']}")
 print(f"Type: {type(parsed_issue)}")
+print()
+
+
+# JSON dump to file
+print("-- JSON dump to file --")
+
+file_path = Path(__file__).parent / "issues.json"
+
+with open(file_path, "w", encoding="utf-8") as file:
+    json.dump(issue, file, indent=4)
+
+print(f"JSON file saved: {file_path}")
