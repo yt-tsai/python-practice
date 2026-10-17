@@ -42,3 +42,17 @@ with open(file_path, "w", encoding="utf-8") as file:
     json.dump(issue, file, indent=4)
 
 print(f"JSON file saved: {file_path}")
+print()
+
+
+# JSON load from file
+print("-- JSON load from file --")
+
+with open(file_path, "r", encoding="utf-8") as file:
+    loaded_issue = json.load(file)
+
+print(f"Issue ID: {loaded_issue['id']}")
+print(f"Title: {loaded_issue['title']}")
+print(f"Priority: {loaded_issue['priority']}")
+print(f"Resolved: {loaded_issue['resolved']}")
+print(f"Type: {type(loaded_issue)}")
