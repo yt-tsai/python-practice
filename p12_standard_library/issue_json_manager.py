@@ -21,25 +21,28 @@ print()
 # Add new issue
 print("-- Add new issue --")
 
+issue_ids = [issue["id"] for issue in issues]
+
+if issue_ids:
+    print("List contains data")
+    next_id = max(issue_ids) + 1
+else:
+    print("List is empty")
+    next_id = 101
+
+print(f"Existing IDs: {issue_ids}")
+print(f"Next issue ID: {next_id}")
+
 new_issue = {
-    "id": 102,
+    "id": next_id,
     "title": "Touch panel malfunction",
     "priority": "High",
     "resolved": False,
 }
 
-issue_exists = False
+issues.append(new_issue)
 
-for issue in issues:
-    if issue["id"] == new_issue["id"]:
-        issue_exists = True
-        break
-
-if not issue_exists:
-    issues.append(new_issue)
-    print(f"Added issue: {new_issue['title']}")
-else:
-    print("Issue already exists.")
+print(f"Added issue: {new_issue['title']}")
 
 print(f"Total issues: {len(issues)}")
 
