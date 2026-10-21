@@ -33,10 +33,26 @@ else:
 print(f"Existing IDs: {issue_ids}")
 print(f"Next issue ID: {next_id}")
 
+while True:
+    title = input("Enter issue title: ").strip()
+
+    if title:
+        break
+    print("Title cannot be empty. Please try again.")
+
+valid_priorities = ["High", "Medium", "Low"]
+
+while True:
+    priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
+
+    if priority in valid_priorities:
+        break
+    print("Invalid priority. Please try again.")
+
 new_issue = {
     "id": next_id,
-    "title": "Touch panel malfunction",
-    "priority": "High",
+    "title": title,
+    "priority": priority,
     "resolved": False,
 }
 

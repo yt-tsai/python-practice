@@ -16,5 +16,11 @@
         "title": "Touch panel malfunction",
         "priority": "High",
         "resolved": false
+    },
+    {
+        "id": 104,
+        "title": "Network connection error",
+        "priority": "Medium",
+        "resolved": false
     }
 ]
