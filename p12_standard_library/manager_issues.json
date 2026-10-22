@@ -22,5 +22,11 @@
         "title": "Network connection error",
         "priority": "Medium",
         "resolved": false
+    },
+    {
+        "id": 105,
+        "title": "Database connection error",
+        "priority": "Medium",
+        "resolved": false
     }
 ]
