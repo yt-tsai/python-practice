@@ -3,12 +3,28 @@ from pathlib import Path
 
 file_path = Path(__file__).parent / "manager_issues.json"
 
+# Read JSON
 if file_path.exists():
     with open(file_path, "r", encoding="utf-8") as file:
         issues = json.load(file)
 else:
     issues = []
 
+
+# Display issues
+def view_issues(issues):
+    print("-- Issue List --")
+
+    if issues:
+        for issue in issues:
+            print(f"ID: {issue['id']} | {issue['priority']} | {issue['title']}")
+        print()
+        print(f"Total issues: {len(issues)}")
+    else:
+        print("No issues found.")
+
+
+# Main menu
 while True:
     print("\n===== Issue JSON Manager =====")
     print("1. View issues")
@@ -18,15 +34,7 @@ while True:
     choice = input("Select an option: ").strip()
 
     if choice == "1":
-        print("-- Issue List --")
-
-        if issues:
-            for issue in issues:
-                print(f"ID: {issue['id']} | {issue['priority']} | {issue['title']}")
-            print()
-            print(f"Total issues: {len(issues)}")
-        else:
-            print("No issues found.")
+        view_issues(issues)
 
     elif choice == "2":
         print("-- Add New Issue --")
