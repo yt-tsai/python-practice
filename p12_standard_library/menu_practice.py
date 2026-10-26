@@ -3,13 +3,6 @@ from pathlib import Path
 
 file_path = Path(__file__).parent / "manager_issues.json"
 
-# Read JSON
-if file_path.exists():
-    with open(file_path, "r", encoding="utf-8") as file:
-        issues = json.load(file)
-else:
-    issues = []
-
 
 # Display issues
 def view_issues(issues):
@@ -77,6 +70,19 @@ def add_issue(issues, file_path):
     save_issues(issues, file_path)
 
     print("Issues saved successfully.")
+
+
+# Load
+def load_issues(file_path):
+    # Read JSON and return the issues list
+    if file_path.exists():
+        with open(file_path, "r", encoding="utf-8") as file:
+            return json.load(file)
+
+    return []
+
+
+issues = load_issues(file_path)
 
 
 # Main menu
