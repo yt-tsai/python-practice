@@ -76,8 +76,12 @@ def add_issue(issues, file_path):
 def load_issues(file_path):
     # Read JSON and return the issues list
     if file_path.exists():
-        with open(file_path, "r", encoding="utf-8") as file:
-            return json.load(file)
+        try:
+            with open(file_path, "r", encoding="utf-8") as file:
+                return json.load(file)
+        except json.JSONDecodeError:
+            print("Error: Invalid JSON format.")
+            raise
 
     return []
 

@@ -15,3 +15,6 @@ venv/
 p07_file_handling/sample.txt
 p07_file_handling/languages.txt
 p07_file_handling/output.txt
+
+# Local test data
+p12_standard_library/invalid_issues.json
