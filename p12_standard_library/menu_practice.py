@@ -79,8 +79,8 @@ def load_issues(file_path):
         try:
             with open(file_path, "r", encoding="utf-8") as file:
                 return json.load(file)
-        except json.JSONDecodeError:
-            print("Error: Invalid JSON format.")
+        except json.JSONDecodeError as e:
+            print(f"Error: {e}")
             raise
 
     return []
