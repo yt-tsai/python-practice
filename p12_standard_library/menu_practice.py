@@ -80,7 +80,7 @@ def load_issues(file_path):
             with open(file_path, "r", encoding="utf-8") as file:
                 return json.load(file)
         except json.JSONDecodeError as e:
-            print(f"Error: {e}")
+            print(f"Error: Failed to load {file_path.name}: {e}")
             raise
 
     return []
