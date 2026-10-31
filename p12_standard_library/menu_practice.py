@@ -72,6 +72,17 @@ def add_issue(issues, file_path):
     print("Issues saved successfully.")
 
 
+# Update an issue
+def update_issue(issues):
+    issue_id = int(input("Enter issue ID: "))
+
+    for issue in issues:
+        if issue["id"] == issue_id:
+            print(f"Found: {issue['title']}")
+            return
+    print("Issue not found.")
+    
+
 # Load
 def load_issues(file_path):
     # Read JSON and return the issues list
@@ -94,7 +105,8 @@ while True:
     print("\n===== Issue JSON Manager =====")
     print("1. View issues")
     print("2. Add issue")
-    print("3. Exit")
+    print("3. Update issue")
+    print("4. Exit")
 
     choice = input("Select an option: ").strip()
 
@@ -105,7 +117,11 @@ while True:
         add_issue(issues, file_path)
 
     elif choice == "3":
+        update_issue(issues)
+
+    elif choice == "4":
         print("Goodbye")
         break
+
     else:
         print("Invalid option. Please try again.")
