@@ -73,15 +73,30 @@ def add_issue(issues, file_path):
 
 
 # Update an issue
-def update_issue(issues):
+def update_issue(issues, file_path):
     issue_id = int(input("Enter issue ID: "))
 
     for issue in issues:
         if issue["id"] == issue_id:
             print(f"Found: {issue['title']}")
+            print(f"Current priority: {issue['priority']}")
+
+            valid_priorities = ["High", "Medium", "Low"]
+            while True:
+                priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
+
+                if priority in valid_priorities:
+                    break
+
+                print("Invalid priority. Please try again.")
+
+            issue["priority"] = priority
+            save_issues(issues, file_path)
+            print("Priority updated successfully.")
             return
+
     print("Issue not found.")
-    
+
 
 # Load
 def load_issues(file_path):
@@ -117,7 +132,7 @@ while True:
         add_issue(issues, file_path)
 
     elif choice == "3":
-        update_issue(issues)
+        update_issue(issues, file_path)
 
     elif choice == "4":
         print("Goodbye")
