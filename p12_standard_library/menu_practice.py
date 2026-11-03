@@ -74,7 +74,11 @@ def add_issue(issues, file_path):
 
 # Update an issue
 def update_issue(issues, file_path):
-    issue_id = int(input("Enter issue ID: "))
+    try:
+        issue_id = int(input("Enter issue ID: "))
+    except ValueError:
+        print("Invalid issue ID. Please enter a number.")
+        return
 
     for issue in issues:
         if issue["id"] == issue_id:
