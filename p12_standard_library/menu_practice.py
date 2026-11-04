@@ -85,19 +85,45 @@ def update_issue(issues, file_path):
             print(f"Found: {issue['title']}")
             print(f"Current priority: {issue['priority']}")
 
-            valid_priorities = ["High", "Medium", "Low"]
-            while True:
-                priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
+            print("1. Update title")
+            print("2. Update priority")
 
-                if priority in valid_priorities:
-                    break
+            update_choice = input("Select an option: ").strip()
 
-                print("Invalid priority. Please try again.")
+            if update_choice == "1":
+                while True:
+                    title = input("Enter issue title: ").strip()
 
-            issue["priority"] = priority
-            save_issues(issues, file_path)
-            print("Priority updated successfully.")
-            return
+                    if title:
+                        break
+
+                    print("Title cannot be empty. Please try again.")
+
+                issue["title"] = title
+                save_issues(issues, file_path)
+                print("Title updated successfully.")
+                return
+                
+            elif update_choice == "2":
+
+                valid_priorities = ["High", "Medium", "Low"]
+
+                while True:
+                    priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
+
+                    if priority in valid_priorities:
+                        break
+
+                    print("Invalid priority. Please try again.")
+
+                issue["priority"] = priority
+                save_issues(issues, file_path)
+                print("Priority updated successfully.")
+                return
+
+            else:
+                print("Invalid option. Please try again.")
+                return
 
     print("Issue not found.")
 
