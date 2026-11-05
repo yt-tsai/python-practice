@@ -128,6 +128,34 @@ def update_issue(issues, file_path):
     print("Issue not found.")
 
 
+# Delete an issue
+def delete_issue(issues, file_path):
+    try:
+        issue_id = int(input("Enter issue ID: "))
+    except ValueError:
+        print("Invalid issue ID. Please enter a number.")
+        return
+
+    for issue in issues:
+        if issue["id"] == issue_id:
+            print(f"Found: {issue['title']}")
+
+            confirmation = input("Are you sure? (Y/N): ").strip().upper()
+
+            if confirmation == "Y":
+                issues.remove(issue)
+                save_issues(issues, file_path)
+                print("Issue deleted successfully.")
+            elif confirmation == "N":
+                print("Cancelled.")
+            else:
+                print("Invalid option. Please try again.")
+
+            return
+    
+    print("Issue not found.")
+
+
 # Load
 def load_issues(file_path):
     # Read JSON and return the issues list
@@ -151,7 +179,8 @@ while True:
     print("1. View issues")
     print("2. Add issue")
     print("3. Update issue")
-    print("4. Exit")
+    print("4. Delete issue")
+    print("5. Exit")
 
     choice = input("Select an option: ").strip()
 
@@ -165,6 +194,9 @@ while True:
         update_issue(issues, file_path)
 
     elif choice == "4":
+        delete_issue(issues, file_path)
+
+    elif choice == "5":
         print("Goodbye")
         break
 
