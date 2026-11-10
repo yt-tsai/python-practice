@@ -3,6 +3,15 @@ from pathlib import Path
 
 file_path = Path(__file__).parent / "manager_issues.json"
 
+# Get issue ID
+def get_issue_id():
+    try:
+        issue_id = int(input("Enter issue ID: "))
+        return issue_id
+    except ValueError:
+        print("Invalid issue ID. Please enter a number.")
+        return None
+
 
 # Display issues
 def view_issues(issues):
@@ -74,10 +83,10 @@ def add_issue(issues, file_path):
 
 # Update an issue
 def update_issue(issues, file_path):
-    try:
-        issue_id = int(input("Enter issue ID: "))
-    except ValueError:
-        print("Invalid issue ID. Please enter a number.")
+
+    issue_id = get_issue_id()
+
+    if issue_id is None:
         return
 
     for issue in issues:
@@ -130,10 +139,10 @@ def update_issue(issues, file_path):
 
 # Delete an issue
 def delete_issue(issues, file_path):
-    try:
-        issue_id = int(input("Enter issue ID: "))
-    except ValueError:
-        print("Invalid issue ID. Please enter a number.")
+
+    issue_id = get_issue_id()
+
+    if issue_id is None:
         return
 
     for issue in issues:
