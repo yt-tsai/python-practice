@@ -13,6 +13,21 @@ def get_issue_id():
         return None
 
 
+# Get valid issue priority
+def get_priority():
+    valid_priorities = ["High", "Medium", "Low"]
+
+    while True:
+        priority = input(
+            "Enter priority (High/Medium/Low): "
+        ).strip().capitalize()
+
+        if priority in valid_priorities:
+            return priority
+
+        print("Invalid priority. Please try again.")
+
+
 # Display issues
 def view_issues(issues):
     print("-- Issue List --")
@@ -55,15 +70,7 @@ def add_issue(issues, file_path):
         print("Title cannot be empty. Please try again.")
 
     # Priority input
-    valid_priorities = ["High", "Medium", "Low"]
-
-    while True:
-        priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
-
-        if priority in valid_priorities:
-            break
-
-        print("Invalid priority. Please try again.")
+    priority = get_priority()
 
     new_issue = {
         "id": next_id,
@@ -114,16 +121,7 @@ def update_issue(issues, file_path):
                 return
                 
             elif update_choice == "2":
-
-                valid_priorities = ["High", "Medium", "Low"]
-
-                while True:
-                    priority = input("Enter priority (High/Medium/Low): ").strip().capitalize()
-
-                    if priority in valid_priorities:
-                        break
-
-                    print("Invalid priority. Please try again.")
+                priority = get_priority()
 
                 issue["priority"] = priority
                 save_issues(issues, file_path)
