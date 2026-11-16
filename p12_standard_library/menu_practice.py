@@ -28,6 +28,15 @@ def get_priority():
         print("Invalid priority. Please try again.")
 
 
+# Find an issue by ID
+def find_issue_by_id(issues, issue_id):
+    for issue in issues:
+        if issue["id"] == issue_id:
+            return issue
+
+    return None
+
+
 # Display issues
 def view_issues(issues):
     print("-- Issue List --")
@@ -96,71 +105,72 @@ def update_issue(issues, file_path):
     if issue_id is None:
         return
 
-    for issue in issues:
-        if issue["id"] == issue_id:
-            print(f"Found: {issue['title']}")
-            print(f"Current priority: {issue['priority']}")
+    issue = find_issue_by_id(issues, issue_id)
 
-            print("1. Update title")
-            print("2. Update priority")
+    if issue is None:
+        print("Issue not found.")
+        return
 
-            update_choice = input("Select an option: ").strip()
+    print(f"Found: {issue['title']}")
+    print(f"Current priority: {issue['priority']}")
 
-            if update_choice == "1":
-                while True:
-                    title = input("Enter issue title: ").strip()
+    print("1. Update title")
+    print("2. Update priority")
 
-                    if title:
-                        break
+    update_choice = input("Select an option: ").strip()
 
-                    print("Title cannot be empty. Please try again.")
+    if update_choice == "1":
+        while True:
+            title = input("Enter issue title: ").strip()
 
-                issue["title"] = title
-                save_issues(issues, file_path)
-                print("Title updated successfully.")
-                return
-                
-            elif update_choice == "2":
-                priority = get_priority()
+            if title:
+                break
 
-                issue["priority"] = priority
-                save_issues(issues, file_path)
-                print("Priority updated successfully.")
-                return
+            print("Title cannot be empty. Please try again.")
 
-            else:
-                print("Invalid option. Please try again.")
-                return
+        issue["title"] = title
+        save_issues(issues, file_path)
+        print("Title updated successfully.")
+        return
+        
+    elif update_choice == "2":
+        priority = get_priority()
 
-    print("Issue not found.")
+        issue["priority"] = priority
+        save_issues(issues, file_path)
+        print("Priority updated successfully.")
+        return
+
+    else:
+        print("Invalid option. Please try again.")
+        return
 
 
 # Delete an issue
 def delete_issue(issues, file_path):
-
     issue_id = get_issue_id()
 
     if issue_id is None:
         return
 
-    for issue in issues:
-        if issue["id"] == issue_id:
-            print(f"Found: {issue['title']}")
+    issue = find_issue_by_id(issues, issue_id)
 
-            confirmation = input("Are you sure? (Y/N): ").strip().upper()
+    if issue is None:
+        print("Issue not found.")
+        return
 
-            if confirmation == "Y":
-                issues.remove(issue)
-                save_issues(issues, file_path)
-                print("Issue deleted successfully.")
-            elif confirmation == "N":
-                print("Cancelled.")
-            else:
-                print("Invalid option. Please try again.")
+    print(f"Found: {issue['title']}")
 
-            return
-    
-    print("Issue not found.")
+    confirmation = input("Are you sure? (Y/N): ").strip().upper()
+
+    if confirmation == "Y":
+        issues.remove(issue)
+        save_issues(issues, file_path)
+        print("Issue deleted successfully.")
+    elif confirmation == "N":
+        print("Cancelled.")
+    else:
+        print("Invalid option. Please try again.")
 
 
 # Load
